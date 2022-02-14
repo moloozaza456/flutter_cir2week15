@@ -16,8 +16,9 @@ class _FirstScreenState extends State<FirstScreen> {
   int _index = 0;
   List pages = [
     HomeScreen(), // 0
-    Contact(), // 1
-    StatefulScreen(), // 2
+    SecondScreen(), // 1
+    Contact(), // 2
+    StatefulScreen(), // 3
   ];
 
   @override // 3.build
@@ -80,13 +81,14 @@ class _FirstScreenState extends State<FirstScreen> {
         currentIndex: _index,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"), // 0
-          BottomNavigationBarItem(
-              icon: Icon(Icons.contacts), label: "Contact"), // 1
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "User"), // 2
+          BottomNavigationBarItem(icon: Icon(Icons.send), label: "Second"), // 1
+          BottomNavigationBarItem(icon: Icon(Icons.contacts), label: "Contact"), // 2
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "User"), // 3
         ],
         onTap: (index) {
           print(index);
-          setState(() { // 2.1 Create set // emeral
+          setState(() {
+            // 2.1 Create set // emeral
             // _index = 0;
             _index = index;
           });
