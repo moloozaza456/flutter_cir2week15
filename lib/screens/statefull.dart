@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class StatefulScreen extends StatefulWidget {
   final String userName;
-  const StatefulScreen({Key? key, this.userName = "Jeff Bezzo" }) : super(key: key); //1.Create Constructor
+  const StatefulScreen({Key? key, this.userName = "Jeff Bezzo"})
+      : super(key: key); //1.Create Constructor
 
   @override
   _StatefulScreenState createState() => _StatefulScreenState(); //2.Create State
@@ -30,22 +31,21 @@ class _StatefulScreenState extends State<StatefulScreen> {
 
   @override //2.3 Init didUpdateWidget
   void didUpdateWidget(covariant StatefulScreen oldWidget) {
-    if(this.widget.userName != oldWidget.userName){
+    if (this.widget.userName != oldWidget.userName) {
       super.didUpdateWidget(oldWidget);
     }
 
-    @override//2.4 Init deactivate
-    void deactivate(){
+    @override //2.4 Init deactivate
+    void deactivate() {
       print("deactivate");
       super.deactivate();
     }
 
-    @override//2.5 Init dispose
-    void dispose(){
+    @override //2.5 Init dispose
+    void dispose() {
       print("dispose");
       super.dispose();
     }
-
   }
 
   @override //3.Build
@@ -59,8 +59,9 @@ class _StatefulScreenState extends State<StatefulScreen> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.color_lens),
         backgroundColor: color,
-        onPressed: (){
-          setState(() { //2.2 Set State
+        onPressed: () {
+          setState(() {
+            //2.2 Set State
             color = Colors.amber;
           });
         },
